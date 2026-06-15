@@ -1,0 +1,21 @@
+[package]
+name = "legacy_ai_kernel"
+version = "0.1.0"
+edition = "2021"
+authors = ["Julius Hill"]
+description = "Advanced compute kernels for AI on legacy hardware"
+license = "MIT"
+
+[dependencies]
+libc = "0.2.155"
+crossbeam = "0.3.3"
+rayon = "1.10.0"
+bytemuck = "1.16.0"
+thiserror = "1.0.61"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
